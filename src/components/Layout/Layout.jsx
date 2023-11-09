@@ -22,6 +22,5 @@ const LayoutWrapper = styled.div`
 `;
 
 const WrapperOutlet = styled.div`
-  padding: 20px;
-  padding-left: 290px;
+  padding: 20px 290px;
 `;

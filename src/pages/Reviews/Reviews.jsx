@@ -12,20 +12,24 @@ const Reviews = () => {
 
   return (
     <div>
-      <ul>
-        {' '}
-        {reviews?.map(review => (
-          <li key={review.id}>
-            <h4>{review.author}</h4>
-            <p>{review.content}</p>
-            <p>
-              {`(${
-                review.created_at ? review.created_at.slice(0, 10) : 'unknown'
-              })`}
-            </p>
-          </li>
-        ))}
-      </ul>
+      {reviews.length ? (
+        <ul>
+          {' '}
+          {reviews?.map(review => (
+            <li key={review.id}>
+              <h4>{review.author}</h4>
+              <p>{review.content}</p>
+              <p style={{ color: 'rgb(197, 9, 197)' }}>
+                {`(${
+                  review.created_at ? review.created_at.slice(0, 10) : 'unknown'
+                })`}
+              </p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <h2>There are no reviews yet</h2>
+      )}
     </div>
   );
 };

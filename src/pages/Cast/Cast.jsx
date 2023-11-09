@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCastById } from 'services/api';
+import styled from 'styled-components';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -11,7 +12,7 @@ const Cast = () => {
   }, [movieId]);
   return (
     <div>
-      <ul>
+      <StyledList>
         {cast?.map(actor => (
           <li key={actor.id}>
             <img
@@ -21,14 +22,22 @@ const Cast = () => {
                   : ''
               }
               alt={actor.name}
+              width="140"
+              height="200"
             />
             <h3>{actor.name}</h3>
             <p>Character: {actor.character}</p>
           </li>
         ))}
-      </ul>
+      </StyledList>
     </div>
   );
 };
 
 export default Cast;
+
+const StyledList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+`;
