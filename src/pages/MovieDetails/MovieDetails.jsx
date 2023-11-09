@@ -37,8 +37,8 @@ const MovieDetails = () => {
           <StyledTitle>
             {movie.title ?? movie.name ?? movie.original_name}
           </StyledTitle>
-          <h3>Rate: {movie.vote_average}/10</h3>
-          <h3>Release: {movie.release_date}</h3>
+          <h3>Rate: {Math.round(movie.vote_average * 100) / 100}/10</h3>
+          <h3>Release: {movie.release_date.slice(0, 4)}</h3>
           <h3>Genres: {movie.genres?.map(genre => genre.name).join(', ')}</h3>
           <p>{movie.overview}</p>
           <StyledButton to="cast">Cast</StyledButton>
