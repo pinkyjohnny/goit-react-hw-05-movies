@@ -3,7 +3,7 @@ import {
   StyledTrendlist,
 } from 'pages/TrendMovies/TrendMovies';
 import React, { useEffect, useState } from 'react';
-import { Link, NavLink, useLocation, useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { fetchMoviesByQuery } from 'services/api';
 import styled from 'styled-components';
 

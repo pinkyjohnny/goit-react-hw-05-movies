@@ -1,12 +1,5 @@
-import { StyledLink } from 'components/NavBar/NavBar';
 import React, { useEffect, useRef, useState } from 'react';
-import {
-  Link,
-  NavLink,
-  Outlet,
-  useLocation,
-  useParams,
-} from 'react-router-dom';
+import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import { fetchMoviesById } from 'services/api';
 import styled from 'styled-components';
 
