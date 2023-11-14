@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { Suspense, useEffect, useRef, useState } from 'react';
 import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import { fetchMoviesById } from 'services/api';
 import styled from 'styled-components';
@@ -47,9 +47,9 @@ const MovieDetails = () => {
           </StyledButton>
         </StyledSideContainer>
       </StyledWrapper>
-      <div>
+      <Suspense>
         <Outlet />
-      </div>
+      </Suspense>
     </Container>
   );
 };

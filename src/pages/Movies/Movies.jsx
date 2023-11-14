@@ -28,7 +28,6 @@ const Movies = () => {
     fetchMoviesByQuery({ query }).then(data => setFoundMovies(data));
     setQ('');
   }, [query]);
-  console.log(foundMovies);
 
   return (
     <div>
